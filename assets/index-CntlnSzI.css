@@ -51,6 +51,10 @@ body {
   font-weight: 400;
 }
 
+.list-section {
+  padding: 16px;
+}
+
 /* TODO: 2단계 미션: 카테고리/정렬 필터 */
 .restaurant-filter-container {
   display: flex;
@@ -113,6 +117,7 @@ body {
   padding: 16px 8px;
 
   border-bottom: 1px solid #e9eaed;
+  position: relative;
 }
 
 .restaurant__category {
@@ -139,6 +144,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  flex-grow: 1;
 }
 
 .restaurant__name {
@@ -159,11 +165,20 @@ body {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+.restaurant__bookmark {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  right: 0;
+  position: absolute;
+  top: 20%;
+}
 .restaurant-list-container {
   display: flex;
   flex-direction: column;
 
-  padding: 0 16px;
   margin: 16px 0;
 }
 .modal {
@@ -284,4 +299,57 @@ input[name="link"] {
 
 .button-container {
   display: flex;
+}
+
+.disabled-btn {
+  pointer-events: none;
+  opacity: 0.5;
+  background-color: var(--grey-300);
+  cursor: not-allowed;
+}
+.restaurant-list-header {
+  display: flex;
+  width: 100%;
+}
+
+.select-button {
+  width: 50%;
+  border: none;
+  color: var(--grey-300);
+  border-bottom: 2px solid var(--grey-300);
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 9px;
+  background-color: transparent;
+}
+
+.selected {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+.restaurant-filter {
+  padding: 8px;
+}
+.restaurant-filter-container {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 16px;
+  margin-top: 24px;
+}
+
+.restaurant-filter-container select {
+  height: 44px;
+  min-width: 125px;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  background: transparent;
+
+  font-size: 16px;
+}
+.restaurant-detail {
+  flex-direction: column;
+  border-bottom: none;
 }
